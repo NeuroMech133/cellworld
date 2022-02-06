@@ -65,6 +65,7 @@ class Display:
         self.ax.add_patch(RegularPolygon((xcenter, ycenter), ssides, ssize, facecolor=habitat_color, edgecolor=habitat_edge_color, orientation=srotation, zorder=-3))
         plt.tight_layout()
 
+
     def add_trajectories(self, trajectories: Trajectories, colors={}):
         agents = trajectories.get_agent_names()
         for index, agent in enumerate(agents):
