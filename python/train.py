@@ -11,7 +11,7 @@ import pickle
 
 # create an instance of World class
 current_cell_id = 0
-occlusions = "09_08" # World used for training
+occlusions = "10_08" # World used for training
 w = World.get_from_parameters_names('hexagonal','mice',occlusions)
 w_cells_ids = w.cells.get('id')
 current_cell_location = w.cells[current_cell_id].location
@@ -28,7 +28,7 @@ d = {
 #print(d[current_cell_id].values())
 
 # Training starts here
-NUM_ITERATIONS = 100000
+NUM_ITERATIONS = 18150
 SHOW_STEPS = False # Change this to True for plotting the world
 for i in range(NUM_ITERATIONS):
     if SHOW_STEPS:
