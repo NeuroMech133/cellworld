@@ -4,8 +4,8 @@
 
 import pickle
 
-#Importing the Qtable
-d = pickle.load(open("Q_table_World_14_08.sav", "rb"))
+#Importing the Qtable - Change this for the specific table being used
+d = pickle.load(open("Q_table_World_10_08.sav", "rb"))
 
 # Printing Qtable
 for k,v in d.items():
