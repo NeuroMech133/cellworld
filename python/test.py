@@ -9,7 +9,7 @@ from navigate_functions import *
 
 current_cell_id = 0
 # create an instance of World class - Change this when testing different worlds
-occlusions = "13_02"
+occlusions = "10_08"
 w = World.get_from_parameters_names('hexagonal','mice',occlusions)
 w_cells_ids = w.cells.get('id')
 current_cell_location = w.cells[current_cell_id].location
