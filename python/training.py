@@ -27,6 +27,9 @@ def training(occlusions,iter):
         for i in range(len(w_cells_ids)) 
     }
     #print(d[current_cell_id].values())
+    direction = "e" # Starting direction
+    search_type = 1 # 1
+    counter = 0
 
     # Training starts here
     NUM_ITERATIONS = iter
@@ -45,8 +48,13 @@ def training(occlusions,iter):
             print(progress*"#"+(100-progress)*"-", i, end="\r")
 
         direction_list = ["ne", "nw", "se", "sw", "e", "w"]
-        direction = random.choice(direction_list)
-        #print(direction)
+        if search_type == 2:
+            direction = random.choice(direction_list)
+            counter = counter + 1
+            #search_type = 1
+        if counter == 6:
+            search_type = 1
+            counter = 0
         new_pos, rotation = move_cell(current_cell_id, direction, w) # Obtaining the new position and rotation
         new_cell_id = new_pos.get('id')
         new_cell_location = new_pos.get('location')
