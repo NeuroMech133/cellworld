@@ -8,8 +8,8 @@ from training import *
 iter_thresh = 5
 world_occlusion = "10_08"
 iter_status = []
-iter = 1000
-while iter <= 100000:
+iter = 21000
+while iter <= 30000:
 #for iter in range(50):
     iter_status_vals = []
     for i in range(iter_thresh):
