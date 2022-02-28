@@ -36,7 +36,7 @@ distances = {"ne":0, "e":0, "se":0, "sw":0, "w":0, "nw":0}
 #search_type = 1 # 1 = Takes the same direction until it reaches a wall, then switches to 2. 2 = random direction
 # Training starts here
 NUM_ITERATIONS = 10000
-SHOW_STEPS = False # Change this to True for plotting the world
+SHOW_STEPS = True # Change this to True for plotting the world
 for i in range(NUM_ITERATIONS):
     if SHOW_STEPS:
         # add agent and circle to figure using method from Display class
