@@ -35,8 +35,9 @@ distances = {"ne":0, "e":0, "se":0, "sw":0, "w":0, "nw":0}
 direction = "e" # Starting direction
 search_type = 1 # 1 = Takes the same direction until it reaches a wall, then switches to 2. 2 = random direction
 # Training starts here
-NUM_ITERATIONS = 100000
+NUM_ITERATIONS = 18000
 SHOW_STEPS = False # Change this to True for plotting the world
+counter = 0
 for i in range(NUM_ITERATIONS):
     if SHOW_STEPS:
         # add agent and circle to figure using method from Display class
@@ -53,7 +54,11 @@ for i in range(NUM_ITERATIONS):
     direction_list = ["ne", "nw", "se", "sw", "e", "w"]
     if search_type == 2:
         direction = random.choice(direction_list)
+        counter = counter + 1
+        #search_type = 1
+    if counter == 6:
         search_type = 1
+        counter = 0
     #print(direction)
     #for directions in direction_list:
         #print(directions)
@@ -71,8 +76,8 @@ for i in range(NUM_ITERATIONS):
     new_cell_id = new_pos.get('id')
     new_cell_location = new_pos.get('location')
     obj = new_pos.get('event')
-    current_cell_distance = find_distance(current_cell_location,goal_cell_location)
-    new_cell_distance = find_distance(new_cell_location,goal_cell_location)
+    #current_cell_distance = find_distance(current_cell_location,goal_cell_location)
+    #new_cell_distance = find_distance(new_cell_location,goal_cell_location)
     #print(search_type)
     if obj == "reward":
         # Successfully reached the goal
